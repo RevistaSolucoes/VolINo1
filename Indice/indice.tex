@@ -1,0 +1,79 @@
+\documentclass{scrartcl}
+
+% Spanish 
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+%Tamaño de la area de texto
+\addtolength{\headheight}{-1cm}
+\addtolength{\topmargin}{-1cm} 
+\addtolength{\textwidth}{4.5cm}
+\addtolength{\textheight}{8cm}
+%\addtolength{\evensidemargin}{-3cm}
+\addtolength{\oddsidemargin}{-2.5cm}
+%Fonts
+\usepackage{venturis2}
+\usepackage[T1]{fontenc}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+\definecolor{redsol}{HTML}{ce161c}
+\definecolor{bluesol}{HTML}{00467e}
+\definecolor{graysol}{HTML}{58585a}
+\definecolor{newgreen}{HTML}{4bb148}
+\definecolor{newyel}{HTML}{d0b224}
+\definecolor{newyell}{HTML}{FCD209}
+
+\definecolor{sccol}{HTML}{FFD200}
+\definecolor{scicol}{HTML}{4CBB47}
+%\definecolor{sciiicol}{HTML}{BD3FC6}
+\definecolor{sciiicol}{HTML}{F7AA02}
+
+      \definecolor{csc}{HTML}{FFD200}
+     \definecolor{cscc}{HTML}{DFC220}
+    \definecolor{csccc}{HTML}{AFB240}
+   \definecolor{cscccc}{HTML}{8EA260}
+  \definecolor{csccccc}{HTML}{6EA080}
+ \definecolor{cscccccc}{HTML}{4E90A0}
+\definecolor{csccccccc}{HTML}{2D80C1}
+
+\usepackage{tabularx} % in the preamble
+\usepackage{graphicx}
+
+\begin{document} 
+{\fontsize{200}{200}\selectfont \hfill Indice}
+
+\vspace{1cm}
+
+\hfill\rotatebox{90}{
+{\Huge\color{white}
+\begin{tabularx}{0.72\textheight}{Xr}
+{\color{redsol}\fontsize{150}{150}\selectfont Soluções}&\\
+&\\
+{\color{bluesol}\fontsize{50}{50}\selectfont Vol. I, No. 1}&\\
+&\\
+\rowcolor{csccccccc}
+Nada é impossível:  José Manuel Alberto  & {\fontsize{50}{50}\selectfont 1}\\
+\rowcolor{cscccccc}
+Solução em ação: Javier Benede &  {\fontsize{50}{50}\selectfont 2}\\
+\rowcolor{csccccc}
+Matemática em engenharia: a catenária & {\fontsize{50}{50}\selectfont 3}\\
+\rowcolor{cscccc}
+Informática en ingeniería: introducción a Octave & {\fontsize{50}{50}\selectfont 11}\\
+\rowcolor{csccc}
+Novedades: Boavista II, floating power plant &{\fontsize{50}{50}\selectfont 14}\\
+\rowcolor{cscc}
+Pensar jugando&  {\fontsize{50}{50}\selectfont 16}\\
+\end{tabularx}}}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

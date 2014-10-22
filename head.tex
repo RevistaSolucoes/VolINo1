@@ -1,0 +1,273 @@
+% Archivo que contiene la mayoria de definiciones para la revista de
+% Soluciones
+\input Typocaps.fd
+\newcommand*\initfamily{\usefont{U}{Typocaps}{xl}{n}}
+
+
+\newbox\capbox \newcount\capl \def\a{A}
+\def\docappar{\medbreak\noindent\setbox\capbox\hbox{\normalfont\initfamily \fontsize{20mm}{20mm}\selectfont\a\hskip0.15em}%
+\hangindent=\wd\capbox%
+\capl=\ht\capbox\divide\capl by\baselineskip\advance\capl by1\hangafter=-\capl%
+\hbox{\vbox to8pt{\hbox to0pt{\hss\box\capbox}\vss}}}
+\def\cappar{\afterassignment\docappar\noexpand\let\a }
+
+
+% Spanish 
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+%Tamaño de la area de texto
+\addtolength{\headheight}{2cm}
+\addtolength{\topmargin}{-1cm} 
+\addtolength{\textwidth}{3cm}
+\addtolength{\evensidemargin}{-3cm}
+
+%Fonts
+\usepackage{venturis2}
+\usepackage[T1]{fontenc}
+\usepackage{marvosym}
+%\usepackage{fontspec}
+%\usepackage{fontawesome}
+
+%Simbolos y definiciones de AMS
+\usepackage{amssymb,amsmath,amsthm, amsopn}
+\DeclareMathOperator{\senh}{senh}
+
+\usepackage[squaren]{SIunits}
+
+%Numeracion con el numero de seccion
+\numberwithin{equation}{section}
+
+
+%Muliticolumnas (si nesesario)
+\usepackage{multicol}
+
+%Links etc..
+\usepackage{hyperref}
+\hypersetup{colorlinks=false}
+
+%Colores corporativos
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{redsol}{HTML}{ce161c}
+\definecolor{bluesol}{HTML}{00467e}
+\definecolor{graysol}{HTML}{58585a}
+\definecolor{newgreen}{HTML}{4bb148}
+\definecolor{newyel}{HTML}{d0b224}
+\definecolor{newyell}{HTML}{FCD209}
+
+\definecolor{sccol}{HTML}{FFD200}
+\definecolor{scicol}{HTML}{4CBB47}
+%\definecolor{sciiicol}{HTML}{BD3FC6}
+\definecolor{sciiicol}{HTML}{F7AA02}
+
+      \definecolor{csc}{HTML}{FFD200}
+     \definecolor{cscc}{HTML}{DFC220}
+    \definecolor{csccc}{HTML}{AFB240}
+   \definecolor{cscccc}{HTML}{8EA260}
+  \definecolor{csccccc}{HTML}{6EA080}
+ \definecolor{cscccccc}{HTML}{4E90A0}
+\definecolor{csccccccc}{HTML}{2D80C1}
+
+\definecolor{cuadroiiicol}{HTML}{7EBE36}
+
+\newcommand{\seccol}{bluesol!10}
+\newcommand{\cuadrocol}{redsol}
+
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+\usetikzlibrary{shadows.blur}
+
+
+\usepackage{atbegshi}
+
+
+%boxes
+\definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\newmdenv[innerlinewidth=0.5pt,
+roundcorner=4pt,linecolor=bluesol,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
+
+\newmdenv[innerlinewidth=0.5pt,
+linecolor=graysol,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{octavebox}
+
+\newmdenv[innerlinewidth=0.5pt,
+linecolor=graysol,innerleftmargin=0pt,
+innerrightmargin=0pt,innertopmargin=6pt,innerbottommargin=6pt, rightmargin=12pt]{octaveboxI}
+
+\newenvironment{octavecode}{\begin{octaveboxI}\begin{verbatim}}{\end{verbatim}\end{octaveboxI}}
+
+\newmdenv[innerlinewidth=0.5pt,
+roundcorner=4pt,linecolor=redsol,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{figurebox}
+
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+\usepackage[%
+  automark,
+  % headsepline,                %% Separation line below the header
+  footsepline,               %% Separation line above the footer
+  % markuppercase
+]{scrpage2}
+\usepackage{babel}
+\usepackage{blindtext}
+\usepackage{wrapfig}
+
+
+\newcommand{\finde}{\textwidth}
+\newcommand{\cabeza}{
+    \fill[\seccol]
+    (current page.north west) -- 
+    (current page.north east) --
+    ([yshift=-2.5cm]current page.north east) --
+    ([yshift=-2.5cm]current page.north west) --
+    cycle;
+}
+
+\newcommand{\cabezahead}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \cabeza
+    \node [yshift=-0.5cm, xshift=1cm, 
+    anchor= north west, rounded corners] at (current page.north west) 
+    {\color{white}
+      \sf
+      \begin{tabular}{l}
+        \emph{\huge\Title}\\
+        {\small\Author} \\
+      \end{tabular}
+    };
+  \end{tikzpicture}   
+}
+
+\newcommand{\ocabezahead}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \cabeza
+    \node [yshift=-0.5cm,
+    anchor= north west, rounded corners] at (current page.north west) 
+    {\color{white}
+      \sf
+      \hspace{1.5cm}
+      \begin{tabular}{l}
+        \emph{\huge\Title}\\
+        {\small\Author} \\
+      \end{tabular}
+    };
+  \end{tikzpicture}   
+}
+
+
+\newcommand{\cabezaplain}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \cabeza
+    \node [fill=\cuadrocol, yshift=-0.5cm, 
+    anchor= north west, blur shadow={shadow blur steps=10}] at (current page.north west) 
+    {
+      \color{graysol!10}\sf
+      \hspace{1.5cm}
+      \begin{tabular}{l}
+          {\Huge \Title}\\
+          {\large \emph{\Author}} 
+      \end{tabular}
+      \hspace{0.5cm}
+    };
+  \end{tikzpicture}   
+}
+
+\newcommand{\pies}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[\seccol]
+    (current page.south west) -- 
+    (current page.south east) --
+    ([yshift=3.5cm]current page.south east) --
+    ([yshift=3.5cm]current page.south west) --
+    cycle;
+  
+  \node [yshift=0.7cm, xshift=1cm, 
+    anchor= south west] at (current page.south west) 
+    {\color{white}\fontsize{3.2cm}{1em}\sf\thepage
+    };
+    \node [fill=bluesol,yshift=2.7cm, xshift=-1cm, 
+    anchor= north east, 
+    blur shadow={shadow blur steps=5}] at (current page.south east) 
+    {
+      \color{graysol!10}\sf
+      \hspace{0.5cm}
+      \begin{tabular}{l}
+          Soluções \\
+          \emph{\vol}\\
+          {\tt www.revistasolucoes.com}
+        \end{tabular}
+        \hspace{0.5cm}
+      };
+  \end{tikzpicture}
+}
+
+\newcommand{\opies}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[\seccol]
+    (current page.south west) -- 
+    (current page.south east) --
+    ([yshift=3.5cm]current page.south east) --
+    ([yshift=3.5cm]current page.south west) --
+    cycle;
+  
+    \node [yshift=0.7cm, xshift=-1cm, 
+    anchor= south east] at (current page.south east) 
+    {\color{white}\fontsize{3.2cm}{1em}\sf\thepage
+    };
+
+    \node [fill=bluesol,yshift=2.7cm, xshift=1cm, 
+    anchor= north west, 
+    blur shadow={shadow blur steps=5}] at (current page.south west) 
+    {
+      \color{graysol!10}\sf
+      \hspace{0.5cm}
+      \begin{tabular}{l}
+          Soluções \\
+          \emph{\vol}\\
+          {\tt www.revistasolucoes.com}
+        \end{tabular}
+        \hspace{0.5cm}
+      };
+    \end{tikzpicture}
+  }
+
+\lehead[\cabezaplain]{\cabezahead}%% Top left on even pages
+\lohead[\cabezaplain]{\ocabezahead}    %% Top left on odd pages
+\rehead[]{}    %% Top right on even pages
+\rohead[]{}    %% Top right on odd pages
+\chead[]{}
+\lefoot[]{}
+\lofoot[]{}
+\refoot[\pies]{\pies}
+\rofoot[\opies]{\opies}
+\cfoot[]{}
+
+%\renewcommand{\titlepagestyle}{scrheadings}
+
+\automark[subsection]{section}
+\pagestyle{scrheadings}
+
+
+\DeclareMathOperator{\arsenh}{arsenh}
+\DeclareMathOperator{\cata}{cata}
+\DeclareMathOperator{\lCata}{lCata}
+
+\DeclareMathOperator{\parab}{parab}
+
+\newcommand{\Octave}{{\sf Octave}}
+
+\DeclareMathOperator{\kgf}{kgf}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

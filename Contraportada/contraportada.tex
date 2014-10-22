@@ -1,0 +1,144 @@
+\documentclass{scrartcl}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+\addtolength{\headheight}{0cm}
+\addtolength{\topmargin}{-1cm} 
+\addtolength{\textwidth}{4cm}
+\addtolength{\textheight}{8cm}
+\addtolength{\oddsidemargin}{-2.5cm}
+
+%Fonts
+\usepackage{venturis2}
+\usepackage[T1]{fontenc}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{redsol}{HTML}{CE161C}
+\definecolor{bluesol}{HTML}{00467E}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows.blur}
+
+\usepackage{wasysym}
+\usepackage{marvosym}
+\usepackage{hyperref}
+\usepackage{pifont}
+\begin{document}
+
+% \begin{center}
+%    \includegraphics[width=0.7\linewidth]{SOLadvertising02.pdf}
+% \end{center}
+
+% \begin{tikzpicture}[remember picture,overlay]
+%   \fill[bluesol]
+%   ([yshift=-1.5cm]current page.north west) -- 
+%   ([yshift=-1.5cm]current page.north east) --
+%   ([yshift=8cm]current page.south east) --
+%   ([yshift=8cm]current page.south west) --
+%   cycle;
+% \end{tikzpicture}
+
+
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[redsol]
+  (current page.north west) -- 
+  (current page.north east) --
+  ([yshift=-1.5cm]current page.north east) --
+  ([yshift=-1.5cm]current page.north west) --
+  cycle;
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[white]
+  ([yshift=-0.1cm,xshift=0.1cm]current page.north west) -- 
+  ([yshift=-0.1cm, xshift=10.4cm]current page.north west) --
+  ([yshift=-1.4cm, xshift=10.4cm]current page.north west) --
+  ([yshift=-1.4cm, xshift=0.1cm]current page.north west) --
+  cycle;
+
+  \node [yshift=-0.75cm, xshift=5.2cm] at (current page.north west) 
+      {\color{redsol}\fontsize{1.2cm}{1em}
+        {\bf REVISTA SOLUÇÕES} 
+        };
+
+  \node [yshift=3.25cm] at (current page.center) 
+      {\color{redsol}\fontsize{1.2cm}{1em}
+        \includegraphics[width=0.7\linewidth]{SOLadvertising02.pdf}
+        };
+
+
+\end{tikzpicture}
+
+  
+% \node [yshift=-0.4cm, xshift=1cm, fill =white,
+%     anchor= north west] at (current page.north west) 
+%     {\color{redsol}
+%       \sf
+%       \begin{tabular}{l}
+%         {\bf SOLUÇÕES REVISTA} 
+%       \end{tabular}
+%     };
+% \end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[redsol]
+    (current page.south west) -- 
+    (current page.south east) --
+    ([yshift=8cm]current page.south east) --
+    ([yshift=8cm]current page.south west) --
+    cycle;
+  
+  \node [yshift=7.5cm, xshift=1cm, 
+    anchor= north west] at (current page.south west) 
+    {\color{white}
+      \begin{tabular}[l]{ll}
+        {\bf Conselho de redação}:  & Dr. María José Peláez Montalvo\\
+        &  Dr. Bart{\l}omiej Skorulski\\
+        & Ing. Carlos Gil Molinos\\
+        & Ing. Amaia Echeverría Ripa\\
+        & Ing. Peña Pérez Bendicho
+      \end{tabular}
+
+    };
+    \node [yshift=7.5cm, xshift=-1cm, 
+    anchor= north east] at (current page.south east) 
+    %blur shadow={shadow blur steps=5}] at (current page.south east) 
+    {\color{white}
+      \begin{tabular}[l]{ll}
+        {\bf Maquetação capa}: & Antonio Lasala Alastuey\\
+        & David Blanco Castillero\\
+        {\bf Maquetação \LaTeX}: & Bart{\l}omiej Skorulski\\
+        {\bf Tradução portuguesa}: & Lourdes Eced Minguillón
+      \end{tabular}
+      };
+
+      \node [yshift=1.5cm, xshift=1cm, 
+      anchor= south west] at (current page.south west) 
+      {\color{white}
+        \begin{tabular}[l]{ll}
+          \textcopyright & Publicaciones Saema, Projectos na Área Eléctrica 
+          e Médica, lda\\
+          \Industry & C/ Deolinda Rodrigues S/N -- Luanda -- Angola\\
+          \phone & (+244) 222 32 78 42\\
+          \Letter &\url{solucoesrevista@gmail.com}\\
+          \ding{43} &\url{www.revistasolucoes.com}
+        \end{tabular}
+      };
+
+      \node [yshift=1cm] at (current page.south) 
+      {\color{white}
+        \begin{tabular}[l]{c}
+          Qualquer forma de reprodução, distribuição, comunicação pública ou transformação
+          desta obra apenas\\ pode ser realizada com 
+          a autorização dos titulares.
+        \end{tabular}
+      };
+  \end{tikzpicture}
+
+
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

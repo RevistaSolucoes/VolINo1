@@ -1,0 +1,72 @@
+\documentclass{scrartcl}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+
+\addtolength{\headheight}{0cm}
+\addtolength{\topmargin}{-2cm} 
+\addtolength{\textwidth}{4cm}
+\addtolength{\textheight}{8cm}
+\addtolength{\oddsidemargin}{-2.5cm}
+
+%Fonts
+\usepackage{venturis2}
+\usepackage[T1]{fontenc}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{redsol}{HTML}{CE161C}
+\definecolor{bluesol}{HTML}{00467E}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calendar,folding}
+\def\pgfcalendarmonthname#1{ \translate{\ifcase#1\or Janeiro\or Fevereiro\or Março\or Abril\or Maio\or Junho\or Julho\or Agosto\or Septembro\or Outubro\or Novembro\or Dezembro\fi}}
+\def\year{2014}
+
+
+\begin{document}
+
+\hfill    {\Huge \textcolor{bluesol}{Feliz ano novo} 
+  \textcolor{redsol}{2014!}}
+
+
+\begin{center}
+\hspace{3cm}
+\sffamily\scriptsize
+\begin{tikzpicture}[transform shape,
+  every calendar/.style={
+    at={(-8ex,4ex)},
+    week list,
+    month label above centered, 
+    month text=\bfseries\textcolor{bluesol}{\includegraphics[height=0.7cm]{logoSMtranspa2.png}\%mt} \%y0,
+    if={(Sunday) [redsol]},
+    fill=green,
+  }]
+  \tikzfoldingdodecahedron[
+  folding line length=3cm,
+  face 1={ \calendar [dates=\year-01-01 to \year-01-last];},
+  face 2={ \calendar [dates=\year-02-01 to \year-02-last];},
+  face 3={ \calendar [dates=\year-03-01 to \year-03-last];},
+  face 4={ \calendar [dates=\year-04-01 to \year-04-last];},
+  face 5={ \calendar [dates=\year-05-01 to \year-05-last];},
+  face 6={ \calendar [dates=\year-06-01 to \year-06-last];},
+  face 7={ \calendar [dates=\year-07-01 to \year-07-last];},
+  face 8={ \calendar [dates=\year-08-01 to \year-08-last];},
+  face 9={ \calendar [dates=\year-09-01 to \year-09-last];},
+  face 10={\calendar [dates=\year-10-01 to \year-10-last];},
+  face 11={\calendar [dates=\year-11-01 to \year-11-last];},
+  face 12={\calendar [dates=\year-12-01 to \year-12-last];}
+  ];
+\end{tikzpicture}
+
+\end{center}
+
+
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

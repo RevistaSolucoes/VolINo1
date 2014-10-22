@@ -1,0 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Código Octave que contiene los códigos de las gráficas que aparecen en sección Informática
+%%% en ingeniería: a catenÃria
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#Octave
+
+#Archivo que contiene codigos de los dobujos del articulo InformÃ¡tica
+#en IngenierÃ­a: introducciÃ³n a Octave, Seccion 1
+
+#Primeramente Octave puede ser tratada como una calculadora avanzada.
+#Por ejemplo, para calcular cuÃ¡nto es la suma de 2 y 2.
+2+2
+
+#Cuando ya sabemos que 2 y 2 es 4, podemos probar algo mÃ¡s complicado.
+ (e^2-1)*cos(pi/3)/12
